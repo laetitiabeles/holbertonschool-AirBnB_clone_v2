@@ -35,14 +35,15 @@ class DBStorage():
         """Queries the database based on the class name"""
         objects = {}
 
-        if not cls:
-            query = self.__session.query(State, City, User, Place, Review, Amenity)
-        else:
+        if cls:
             query = self.__session.query(cls)
+        else:
+            query = self.__session.query(State, City, User, Place, Review,
+                                         Amenity)
 
         for obj in query:
             key = "{}.{}".format(obj.__class__.__name__, obj.id)
-            obj_dict[key] = obj
+            object[key] = obj
 
         return objects
 
