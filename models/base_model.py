@@ -4,7 +4,8 @@ import uuid
 from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime
-
+import models
+from os import getenv
 
 Base = declarative_base()
 class BaseModel:
