@@ -28,8 +28,8 @@ class DBStorage():
             pool_pre_ping=True
         ))
 
-        if getenv("HBNB_ENV") == "test":
-            Base.metadata.drop_all(self.__engine)
+        # if getenv("HBNB_ENV", "dev") == "test":
+            # Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
         """Queries the database based on the class name"""
@@ -39,7 +39,7 @@ class DBStorage():
             query = self.__session.query(cls)
         else:
             query = self.__session.query(State, City, User, Place, Review,
-                                         Amenity)
+                                        Amenity)
 
         for obj in query:
             key = "{}.{}".format(obj.__class__.__name__, obj.id)
