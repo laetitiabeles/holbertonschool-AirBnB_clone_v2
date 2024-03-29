@@ -6,7 +6,6 @@ from os import getenv
 import models
 from sqlalchemy.orm import relationship
 from models.review import Review
-from models.amenity import Amenity
 
 
 class Place(BaseModel, Base):
@@ -53,21 +52,3 @@ class Place(BaseModel, Base):
                     list_reviews.append(value)
 
             return list_reviews
-
-        @property
-        def amenities(self):
-            """ Return Amenities list """
-            list_amenities = []
-
-            for value in models.storage.all(Amenity).values():
-                if value.place_id == self.id:
-                    list_amenities.append(value)
-
-            return list_amenities
-
-        @amenities.setter
-        def amenities(self, cls):
-            """ Amenity id """
-            if not isinstance(cls, Amenity):
-                return
-            self.amenity_ids.append(cls.id)
