@@ -25,13 +25,25 @@ This repository contains the initial stage of a student project to build a clone
 
 1. First clone this repository.
 
-3. Once the repository is cloned locate the "console.py" file and run it as follows:
+```bash
+git clone https://github.com/laetitiabeles/holbertonschool-AirBnB_clone_v2.git
+cd holbertonschool-AirBnB_clone_v2
 ```
-/AirBnB_clone$ ./console.py
+
+2. You can now use the command interpreter
+
+```bash
+./console
 ```
-4. When this command is run the following prompt should appear:
+
+3. If all goes well, the following prompt should appear
+
+```bash
+(hbtn)
 ```
-(hbnb)
+
+4. You can now use it as you wish. The commands available are detailed below, in the "*Commands*" category.
+
 ```
 5. This prompt designates you are in the "HBnB" console. There are a variety of commands available within the console program.
 
